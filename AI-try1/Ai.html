@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+
+    <style>
+        html body {
+            background-image: linear-gradient(to right,#151818, #ffffcb);
+        }
+
+        #world{
+            width:800px;
+            height:600px;
+            background-color:#cfcece;
+            text-align:center;
+            position:relative;
+            margin:0 auto;
+            border:dashed 3px red;
+            
+        }
+        .Ai {
+            width: 20px;
+            height: 20px;
+            color:wheat;
+            position:absolute;
+            border-radius:50%;
+        }
+
+        .UI {
+            position: absolute;
+            text-align:center;
+            width: 250px;
+            max-height: 700px;
+            border: solid 3px black;
+            background-image: linear-gradient(to bottom right,#aecfd5, #ffffcb);
+            box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+        }
+
+            .UI > button {
+                margin: 0 auto;
+                background-image: linear-gradient(to bottom right,#a9e1a7, #228593);
+                box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+                margin-top:15px;
+                margin-left: 15px;
+            }
+                .UI > button:hover {
+                    margin: 0 auto;
+                    background-image: linear-gradient(to top left,#18ee12, #20fbdd);
+                    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+                    cursor: pointer;
+                    margin-top: 15px;
+                    margin-left: 15px;
+                }
+        #kill {
+            background-image: linear-gradient(to top left,#cb1817, #7e1818);
+        }
+            #kill:hover {
+                background-image: linear-gradient(to top left,#f9bfbe, #7e1818);
+            }
+
+        #Death {
+            position: absolute;
+            top: -6px;
+            left: 775px;
+            width: 390px;
+            height: 588px;
+            text-align: center;
+            background-color: #ff000045;
+            color: #ca0d0d;
+        }
+        #reproduce{
+            background-image: linear-gradient(to top left,#082406, #34c613);
+        }
+
+        #reproduce:hover{
+            background-image: linear-gradient(to top left,#c9f6c6, #82b078);
+        }
+
+
+    </style>
+
+
+<script src="index.js" ></script>
+   
+</head>
+
+
+<body onload="onLoad()">
+    <div class="UI">
+        <h4 id="pop">population:100</h4>
+        <br />
+        <h4 id="step">steps: 0</h4>
+        <br />
+        <h4 id="Genration">Genration: 0</h4>
+        <br />
+        <h4 id="velocity">velocity range:0-40</h4>
+        <br />
+        <h4 id="Moutation">AVG Moutation Rate: 0</h4>
+        <br />
+        <button onclick="start()" id="Next">Start Genration</button><br />
+        <button onclick="kill_the_weeks()" id="kill">Kill</button>
+        <button onclick="onClickReproduce()" id="reproduce">Reproduce</button>
+    </div>
+
+    <div id="world"><p>World</p></div>
+    <h1 id="Death">Death-Zone</h1>
+</body>
+</html>
