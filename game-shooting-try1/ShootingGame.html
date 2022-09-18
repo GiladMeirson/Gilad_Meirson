@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            margin: 0;
+            background-color:black;
+        }
+
+        #Easy {
+            margin-top: 20px;
+        }
+
+        #Hard, #Meduim, #Legendery {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <div class="fixed text-white text-sm ml-2 mt-1 select-none"><span>Score: </span><span id="scoreEl">0</span></div>
+    
+    <div id="modal" class="fixed inset-0 flex items-center justify-center">
+        <div class="bg-white max-w-md w-full p-6 text-center">
+            <h1 id="bigScore" class="text-4xl font-bold leading-none">0</h1>
+            <p class="text-sm text-gray-700 mb-4">points</p>
+            <div>
+                <button id="startGameBtn" class="bg-blue-500 text-white w-full py-3 rounded-full text-sm">Start Game</button>
+            </div>
+
+            <div>
+                <input type="radio" id="Easy" name="drone" value="Easy"
+                       checked>
+                <label for="Easy">Easy</label>
+            </div>
+
+            <div>
+                <input type="radio" id="Meduim" name="drone" value="Meduim">
+                <label for="Meduim">Meduim</label>
+            </div>
+
+            <div>
+                <input type="radio" id="Hard" name="drone" value="Hard">
+                <label for="Hard">Hard</label>
+            </div>
+
+            <div>
+                <input type="radio" id="Legendery" name="drone" value="Legendery">
+                <label for="Legendery">Legendery</label>
+            </div>
+        </div>
+    </div>
+
+    <canvas></canvas>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="JavaScript.js"></script>
+</body>
+</html>
