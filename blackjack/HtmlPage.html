@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>BlackJack-21</title>
+
+
+    <link href="StyleSheet.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Flip/1.1.2/jquery.flip.min.js"></script>
+    <script src="CardsPack.js"></script>
+    <script src="JavaScript2.js"></script>
+
+
+</head>
+<body onload="setup()">
+
+    <div id="container">
+        <div id="header">
+            <h1>Welcome 21-BlackJack   <span id="create">   &nbsp;&nbsp; &nbsp;  created by Gilad Meirson</span>  <a style="font-size:13px; margin-right:26px;margin-top:13px; float:right;" href="Login.html">Log Out</a></h1>
+
+        </div>
+
+
+        <div id="Bet">
+            <h1 id="placeBet">PLACE YOUR BET!</h1>
+            <table>
+                <tr>
+                    <td><h3>50</h3></td>
+                    <td><h3>100</h3></td>
+                    <td><h3>200</h3></td>
+                </tr>
+                <tr>
+                    <td><img onmouseover="PlayChipHover()" onclick="onChipClick(50)" id="C50" class="pokerChip" src="chip1.png" /></td>
+                    <td><img onmouseover="PlayChipHover()" onclick="onChipClick(100)" id="C100" class="pokerChip" src="chip2.png" /></td>
+                    <td><img onmouseover="PlayChipHover()" onclick="onChipClick(200)" id="C200" class="pokerChip" src="login.png" /></td>
+                </tr>
+            </table>
+            <br /><br />
+
+            <button id="GoBTN" onclick="onClickGO()">GO</button>
+        </div>
+
+
+
+        <div id="UserDetail">
+            <p id="PlayerName">Player: </p>
+            <p id="wallet">Wallet: </p>
+            <p id="sumBetText">Bet: 0$ </p>
+        </div>
+
+
+
+        <div id="BackPack">
+            <img id="one" src="cardsSVG/2B.png" />
+            <img id="two" src="cardsSVG/2B.png" />
+            <img id="three" src="cardsSVG/2B.png" />
+        </div>
+        <div id="ph-cards">
+
+
+            <!--example-->
+            <!--<div class="OneCard">
+
+            <div class="front">
+                <img src="cardsSVG/2H.png" />
+            </div>
+
+            <div class="back">
+                <img src="cardsSVG/2B.png" />
+            </div>
+        </div>-->
+
+
+        </div>
+        <div id="BtnSet">
+            <button onmouseover="playClickSound()" onclick="OnClickHit()" id="HIT" class="big-button">HIT</button>
+            <button onmouseover="playClickSound()" onclick="onClickStand()" id="STAND" class="big-button">STAND</button>
+            <button onmouseover="playClickSound()" onclick="OnClickDouble()" id="DOUBLE" class="big-button">DOUBLE</button>
+            <button onmouseover="playClickSound()" onclick="OnClickSplit()" id="SPLIT" class="big-button">SPLIT</button>
+        </div>
+
+
+        <!--for the split-->
+        <div id="BtnSet1">
+            <button onmouseover="playClickSound()" onclick="HIT_Split()" id="HIT1" class="big-button">HIT</button>
+            <button onmouseover="playClickSound()" onclick="Stand_Split1()" id="STAND1" class="big-button">STAND</button>
+            <button onmouseover="playClickSound()" onclick="Double_Split()" id="DOUBLE1" class="big-button">DOUBLE</button>
+
+        </div>
+        <div id="BtnSet2">
+            <button onmouseover="playClickSound()" onclick="HIT_Split()" id="HIT2" class="big-button">HIT</button>
+            <button onmouseover="playClickSound()" onclick="Stand_Split2()" id="STAND2" class="big-button">STAND</button>
+            <button onmouseover="playClickSound()" onclick="Double_Split()" id="DOUBLE2" class="big-button">DOUBLE</button>
+
+        </div>
+
+
+        <p id="DealerScore">0</p>
+        <p id="PlayerScore">15</p>
+        <p id="PlayerScore1">15</p>
+        
+        <p id="PlayerScore2">15</p>
+
+        <div id="Winnig">
+            <img src="win.png" />
+        </div>
+
+        <div id="Losing">
+            <img src="Lose.png" />
+        </div>
+        <div id="Tie">
+            <h1 id="tieTitle">15:15</h1>
+            <br /><br />
+            <h1 id="tieTitle2">Its a draw</h1>
+
+        </div>
+        <div id="Ad">
+            <span onclick="Close()" id="X">X</span>
+            <div id="Ad-img">
+                <img src="noMoney.png" />
+            </div>
+            <h1 id="Ad-title">
+                Have you run out of money?<br />
+                Go to the following link and receive <span id="gift">$300</span> as a gift!
+                <br />
+                <a id="linkGift" onclick="AdGift()">Get 300$ free HERE</a>
+            </h1>
+            
+        </div>
+
+
+        <audio style="display:none" id="drawSound" controls="controls">
+            <source src="sounds/draw.mp3" type="audio/mpeg" />
+        </audio>
+
+        <audio style="display:none" id="chipsSound" controls="controls">
+            <source src="sounds/onlymp3.to%20-%20Poker%20Chips%20Sound%20Effect-MuB1LFC7qRc-192k-1660282394608.mp3" type="audio/mpeg" />
+        </audio>
+
+        <audio style="display:none" id="PlaceYourbet" controls="controls">
+            <source src="sounds/place-your-bets.mp3" type="audio/mpeg" />
+        </audio>
+        <audio style="display:none" id="intro" controls="controls">
+            <source src="sounds/better%20intro.mp3" type="audio/mpeg" />
+        </audio>
+        <audio style="display:none" id="lik" controls="controls">
+            <source src="sounds/click-21156.mp3" type="audio/mpeg" />
+        </audio>
+
+        <audio style="display:none" id="shuffle" controls="controls">
+            <source src="sounds/shuffle%20cards.mp3" type="audio/mpeg" />
+        </audio>
+        <audio style="display:none" id="win1" controls="controls">
+            <source src="sounds/success.mp3" type="audio/mpeg" />
+        </audio>
+        <audio style="display:none" id="win2" controls="controls">
+            <source src="sounds/player-wins-94889.mp3" type="audio/mpeg" />
+        </audio>
+        <audio style="display:none" id="win3" controls="controls">
+            <source src="sounds/claps.mp3" type="audio/mpeg" />
+        </audio>
+        <audio style="display:none" id="ChipHover" controls="controls">
+            <source src="sounds/chipHover.mp3" type="audio/mpeg" />
+        </audio>
+
+        <audio style="display:none"   id="lose2" controls="controls">
+            <source src="sounds/lose2.mp3" type="audio/mpeg" />
+        </audio>
+        <audio style="display:none" id="lose1" controls="controls">
+            <source src="sounds/you%20lose.mp3" type="audio/mpeg" />
+        </audio>
+        <audio style="display:none" id="ad-sound" controls="controls">
+            <source src="sounds/money.mp3" type="audio/mpeg" />
+        </audio>
+
+    </div>
+   
+</body>
+</html>
