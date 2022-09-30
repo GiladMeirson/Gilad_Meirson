@@ -1,0 +1,163 @@
+﻿body {
+    margin-left: 0px;
+    background-image: linear-gradient(to right,#0c5e24, #02551b,#146e32);
+}
+
+#ImgMapGame {
+    width: 1075.2px;
+    position: absolute;
+    border-radius: 105px;
+    right: 0px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    box-shadow: rgba(0, 0, 0, 0.27) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.25) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.3) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.26) 0px 2px 1px, rgba(0, 0, 0, 0.29) 0px 4px 2px, rgba(0, 0, 0, 0.29) 0px 8px 4px, rgba(0, 0, 0, 0.29) 0px 16px 8px, rgba(0, 0, 0, 0.29) 0px 32px 16px;
+}
+
+.chips {
+    position: absolute;
+    width: 35px;
+}
+
+#MapGame {
+    position: relative;
+}
+
+#Wheel img {
+    width: 440px;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    /*    box-shadow: rgba(0, 0, 0, 0.27) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.25) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.2) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.16) 0px 2px 1px, rgba(0, 0, 0, 0.19) 0px 4px 2px, rgba(0, 0, 0, 0.19) 0px 8px 4px, rgba(0, 0, 0, 0.19) 0px 16px 8px, rgba(0, 0, 0, 0.19) 0px 32px 16px;
+*/
+}
+
+#Wheel {
+    position: absolute;
+    padding: 10px;
+}
+
+#StartBtn {
+    margin-bottom: 25px;
+    margin-left: 25px;
+    position: absolute;
+    bottom: 0px;
+    border-radius: 20px;
+    background-image: linear-gradient(to right,#355db8, #299b8c,#237116);
+    border: none;
+    font-size: 24px;
+    padding: 15px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+
+    #StartBtn:hover {
+        margin-bottom: 25px;
+        margin-left: 25px;
+        position: absolute;
+        bottom: 0px;
+        border-radius: 20px;
+        cursor: pointer;
+        background-image: linear-gradient(to left,#355db8, #4cd2a6,#237116);
+        border: none;
+        font-size: 24px;
+        padding: 15px;
+        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    }
+
+#Res {
+    position: absolute;
+    display: none;
+    top: 100px;
+    left: 105px;
+    width: 1px;
+    height: 1px;
+    font-size: 28px;
+    text-align: center;
+    background-image: linear-gradient(to left,#b41e1e, #eb5353,#841616);
+    width: 250px;
+    height: 240px;
+    border-radius: 50%;
+    padding-bottom: 30px;
+    box-shadow: rgba(0, 0, 0, 0.27) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.25) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.2) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.16) 0px 2px 1px, rgba(0, 0, 0, 0.19) 0px 4px 2px, rgba(0, 0, 0, 0.19) 0px 8px 4px, rgba(0, 0, 0, 0.19) 0px 16px 8px, rgba(0, 0, 0, 0.19) 0px 32px 16px;
+}
+
+    #Res p {
+        margin-bottom: -25px;
+    }
+
+#resNumber {
+    font-size: 45px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+#Res hr {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+#Ui {
+    display:none;
+    position: absolute;
+    bottom:10px;
+    left:10px;
+    width: 400px;
+    height: 140px;
+    background-image: linear-gradient(to left,#baa10b, #e0c020,#c6a104);
+    padding: 10px;
+    border-radius: 35px;
+    font-size:22px;
+    text-align:left;
+    box-shadow: rgba(0, 0, 0, 0.27) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.25) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.2) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.16) 0px 2px 1px, rgba(0, 0, 0, 0.19) 0px 4px 2px, rgba(0, 0, 0, 0.19) 0px 8px 4px, rgba(0, 0, 0, 0.19) 0px 16px 8px, rgba(0, 0, 0, 0.19) 0px 32px 16px;
+}
+
+#UserImgDiv img {
+    width:105px;
+}
+#UserImgDiv{
+    
+}
+
+
+
+#userDet, #UserImgDiv {
+    float: left;
+}
+
+#userDet{
+    margin-left:50px;
+    margin-top:-15px;
+}
+
+#about{
+    position:absolute;
+    right:30px;
+    bottom:5px;
+}
+
+#logout{
+    position:absolute;
+    top:0px;
+    right:12px;
+
+}
+
+#logout a {
+   font-size:15px;
+}
+
+
+#Bounos {
+    position: absolute;
+    top:30%;
+    left:30%;
+    display: none;
+    border-radius:20px;
+    font-size:50px;
+    text-align:center;
+    background-image: linear-gradient(to left,#baa10b, #e7c139,#c6a104);
+    box-shadow: rgba(0, 0, 0, 0.27) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.25) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.2) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.16) 0px 2px 1px, rgba(0, 0, 0, 0.19) 0px 4px 2px, rgba(0, 0, 0, 0.19) 0px 8px 4px, rgba(0, 0, 0, 0.19) 0px 16px 8px, rgba(0, 0, 0, 0.19) 0px 32px 16px;
+}
+
+#Bounos p:hover {
+    cursor:pointer;
+    color:#3c3c3c;
+}
