@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Snake</title>
+
+
+
+    <style>
+        * {
+            font-family: Assistant;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        #container {
+            height: 97vh;
+            width: 97vw;
+            border-radius: 25%;
+            background-image: linear-gradient(to left, #868686,#000000, #000000,#6f6f6f);
+            display: flex;
+            align-content: space-around;
+            align-items: center;
+            box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        #MyCanvas {
+            border: 3px solid red;
+            align-items: center;
+            background-image: linear-gradient(to right, #000000, #434343,#000000);
+            border-radius: 3%;
+            box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px;
+            box-shadow: rgba(0, 0, 0, 0.27) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.25) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.2) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.16) 0px 2px 1px, rgba(0, 0, 0, 0.19) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+        }
+
+        #GameOverCon {
+            display: none;
+            text-align: center;
+            font-size: 30px;
+            position: absolute;
+            height: 55vh;
+            width: 40vw;
+            top: 28vh;
+            left: 29vw;
+            border-radius: 15%;
+            background-image: linear-gradient(to right, #ffffff, #fdf772,#fbff6a);
+            box-shadow: rgba(0, 0, 0, 0.27) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.25) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.2) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.16) 0px 2px 1px, rgba(0, 0, 0, 0.19) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+        }
+        #Score {
+            font-size: 40px;
+            color: forestgreen;
+            margin-top: -1%;
+        }
+        #over{
+            color:#860b0b;
+            margin-top:-1%;
+        }
+        #GameOverCon img{
+            max-width:25%;
+        }
+        #GameOverCon p, #GameOverCon button{
+/*            margin-top:-5%;
+*/        }
+
+        #GameOverCon button {
+            /*            margin-top: 3%;
+*/ font-size: 25px;
+            border-radius: 25%;
+            background-image: linear-gradient(to right, #459338, #218414,#62ab24);
+            box-shadow: rgba(0, 0, 0, 0.27) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.25) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.2) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.16) 0px 2px 1px, rgba(0, 0, 0, 0.19) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+        }
+
+                #GameOverCon button:hover {
+                    font-size: 30px;
+                    border-radius: 25%;
+                    cursor: pointer;
+/*                    margin-top: 3%;
+*/                    background-image: linear-gradient(to right, #8add70, #75e571,#62ab24);
+                    box-shadow: rgba(0, 0, 0, 0.27) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.25) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.2) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.16) 0px 2px 1px, rgba(0, 0, 0, 0.19) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+                }
+        #realScore{
+            color:wheat;
+        }
+        #SoundDivIcon{
+            position:absolute;
+            top:5px;
+            left:5px;
+        }
+
+        #SoundDivIcon img {
+            width:5vw;
+        }
+            #SoundDivIcon img:hover {
+                cursor:pointer;
+            }
+        #credit {
+            font-size:12px;
+            color:wheat;
+            position:absolute;
+            bottom:0px;
+            left:0px;
+        }
+    </style>
+
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="Main1.js"></script>
+</head>
+
+
+<body onload="init()">
+    <div id="container">
+        <h1 id="realScore">Score: 0</h1>
+        <canvas id="MyCanvas"></canvas>
+        <div id="GameOverCon">
+            <p id="Score">Score: 0</p>
+            <img src="img/CrySnake.png" />
+            <p id="over">GAME OVER !</p>
+            <button onclick="Again()">PLAY AGAIN</button>
+
+
+        </div>
+        <div id="credit"><p>Created By  &#169;	 Gilad Meirson</p></div>
+        <div id="SoundDivIcon">
+            <img id="on" onclick="SwitchMusic(this.id)" src="img/soundon.png" />
+
+        </div>
+
+        <div style="display:none" id="Sounds">
+            <audio id="Bite" controls="controls">
+                <source src="sounds/Bite.mp3" type="audio/mpeg" />
+            </audio>
+            <audio id="Cry" controls="controls">
+                <source src="sounds/cry.mp3" type="audio/mpeg" />
+            </audio>
+            <audio id="Lose" controls="controls">
+                <source src="sounds/negative_beeps.mp3" type="audio/mpeg" />
+            </audio>
+            <audio id="Ohh" controls="controls">
+                <source src="sounds/ohh.mp3" type="audio/mpeg" />
+            </audio>
+            <audio id="Yumm" controls="controls">
+                <source src="sounds/yummy.mp3" type="audio/mpeg" />
+            </audio>
+            <audio id="music" controls="controls">
+                <source src="sounds/musicSnakeJazz.mp3" type="audio/mpeg" />
+            </audio>
+
+        </div>
+    </div>
+</body>
+</html>
